@@ -1,7 +1,6 @@
 import warnings
 warnings.filterwarnings("ignore")
 import os, sys, pdb
-os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
 import re
 import copy
 import argparse
@@ -50,7 +49,7 @@ def main():
     parser = argparse.ArgumentParser()
     # Base Config
     parser.add_argument('--save_root', type=str, default='')
-    parser.add_argument('--sd_ckpt', type=str, default='/home/data/fuxin/data1/lyz/SPEED/ICE/model/CompVis/stable-diffusion-v1-4') #'/data1/lyz/SonicDiffusion/model/stable-diffusion-v1-5') # "CompVis/stable-diffusion-v1-4")
+    parser.add_argument('--sd_ckpt', type=str, default='CompVis/stable-diffusion-v1-4')
     parser.add_argument('--seed', type=int, default=0)
     # Sampling Config
     parser.add_argument('--mode', type=str, default='original', help='original, edit')
@@ -63,7 +62,7 @@ def main():
     parser.add_argument('--erase_type', type=str, default='', help='instance, style, celebrity')
     parser.add_argument('--target_concept', type=str, default='')
     parser.add_argument('--contents', type=str, default='')
-    parser.add_argument('--edit_ckpt', type=str, default=None)
+    parser.add_argument('--edit_ckpt', type=str, required=True)
     args = parser.parse_args()
     assert args.num_samples >= args.batch_size
 
