@@ -1,0 +1,21 @@
+name: nice
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - torch==2.3.0
+      - torchvision==0.18.0
+      - diffusers==0.32.2
+      - transformers==4.48.0
+      - accelerate==1.11.0
+      - safetensors==0.6.2
+      - pillow
+      - numpy
+      - tqdm
+      - pyyaml
