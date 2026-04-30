@@ -51,7 +51,7 @@ CUDA_VISIBLE_DEVICES=0 python inference.py \
     --target_concept 'Snoopy' \
     --contents 'Snoopy' \
     --mode 'original, edit' \
-    --edit_ckpt 'logs/checkpoints_measure/ICE_14/Snoopy.pt' \
+    --edit_ckpt 'logs/checkpoints_measure/NICE/Snoopy.pt' \
     --num_samples 30 \
     --batch_size 6 \
     --save_root 'results/XXX'
@@ -73,7 +73,7 @@ CUDA_VISIBLE_DEVICES=0 python inference.py \
     --target_concept 'Snoopy' \
     --contents 'Snoopy' \
     --mode 'original, edit' \
-    --edit_ckpt 'logs/checkpoints_measure/ICE_3/Snoopy_Van Gogh.pt' \
+    --edit_ckpt 'logs/checkpoints_measure/NICE/Snoopy_Van Gogh.pt' \
     --num_samples 30 \
     --batch_size 6 \
     --save_root 'results/XXX'
