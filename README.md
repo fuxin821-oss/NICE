@@ -35,7 +35,7 @@ conda activate <your_env_name>
 
 Below are examples of how to train and sample using our framework based on the provided scripts.
 
-### 1. Single Concept Erasure (e.g., Instance Erasure)
+### 1. Concept Erasure (e.g., Instance Erasure)
 To erase a specific target concept such as "Snoopy":
 ```bash
 CUDA_VISIBLE_DEVICES=0 python train.py \
@@ -57,23 +57,23 @@ CUDA_VISIBLE_DEVICES=0 python inference.py \
     --save_root 'results/XXX'
 ```
 
-### 2. Multi-Concept Erasure
-To erase multiple target concepts (e.g., an instance and an artistic style simultaneously):
+### 2. Style Erasure
+To erase a specific style such as "Van Gogh":
 ```bash
 CUDA_VISIBLE_DEVICES=0 python train.py \
-    --target_concepts "Snoopy, Van Gogh" \
-    --anchor_concepts ",art" \
-    --retain_path "data/instance.csv" \
+    --target_concepts "Van Gogh" \
+    --anchor_concepts "art" \
+    --retain_path "data/style.csv" \
     --heads "concept"
 ```
-To sample from the multi-concept edited model:
+To sample from the style erased model:
 ```bash
 CUDA_VISIBLE_DEVICES=0 python inference.py \
-    --erase_type 'instance' \
-    --target_concept 'Snoopy' \
-    --contents 'Snoopy' \
+    --erase_type 'style' \
+    --target_concept 'Van Gogh' \
+    --contents 'Van Gogh' \
     --mode 'original, edit' \
-    --edit_ckpt 'logs/checkpoints_measure/NICE/Snoopy_Van Gogh.pt' \
+    --edit_ckpt 'logs/checkpoints_measure/NICE/Van Gogh.pt' \
     --num_samples 30 \
     --batch_size 6 \
     --save_root 'results/XXX'
