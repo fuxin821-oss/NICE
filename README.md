@@ -46,7 +46,7 @@ CUDA_VISIBLE_DEVICES=0 python train.py \
 ```
 To generate samples and evaluate the erased instance:
 ```bash
-CUDA_VISIBLE_DEVICES=0 python inference.py \
+CUDA_VISIBLE_DEVICES=0 python inference_demo.py \
     --erase_type 'instance' \
     --target_concept 'Snoopy' \
     --contents 'Snoopy' \
@@ -68,7 +68,7 @@ CUDA_VISIBLE_DEVICES=0 python train.py \
 ```
 To sample from the style erased model:
 ```bash
-CUDA_VISIBLE_DEVICES=0 python inference.py \
+CUDA_VISIBLE_DEVICES=0 python inference_demo.py \
     --erase_type 'style' \
     --target_concept 'Van Gogh' \
     --contents 'Van Gogh' \
