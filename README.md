@@ -5,7 +5,7 @@ The rise of text-to-image diffusion models necessitates robust safety mechanisms
 
 To address these challenges, we present **NICE**, a Neural Intercede Concept Erasure framework for secure diffusion models, advocating a multi-granular protection strategy from embedding space to feature maps. Experiments demonstrate that NICE achieves a superior trade-off between precise concept removal and non-target knowledge preservation.
 
-<img width="4822" height="3529" alt="1teaser_01(1)" src="https://github.com/user-attachments/assets/6544a0df-7306-4c37-8e92-d4e110852db1" />
+<!-- <img width="4822" height="3529" alt="1teaser_01(1)" src="https://github.com/user-attachments/assets/6544a0df-7306-4c37-8e92-d4e110852db1" /> -->
 
 
 ## ✨ Key Features
