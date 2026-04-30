@@ -477,7 +477,7 @@ if __name__ == '__main__':
         device=device, 
     )
 
-    save_path = args.save_path or "logs/checkpoints"
+    save_path = args.save_path or "logs/checkpoints_measure/NICE"
     file_name = args.file_name or f"{file_suffix}"
     os.makedirs(save_path, exist_ok=True)
     torch.save(edit_dict, os.path.join(save_path, f"{file_name}.pt"))
