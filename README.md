@@ -38,7 +38,7 @@ Below are examples of how to train and sample using our framework based on the p
 ### 1. Single Concept Erasure (e.g., Instance Erasure)
 To erase a specific target concept such as "Snoopy":
 ```bash
-CUDA_VISIBLE_DEVICES=2 python 3214-train.py \
+CUDA_VISIBLE_DEVICES=0 python train.py \
     --target_concepts "Snoopy" \
     --anchor_concepts "" \
     --retain_path "data/instance.csv" \
@@ -46,7 +46,7 @@ CUDA_VISIBLE_DEVICES=2 python 3214-train.py \
 ```
 To generate samples and evaluate the erased instance:
 ```bash
-CUDA_VISIBLE_DEVICES=2 python sample.py \
+CUDA_VISIBLE_DEVICES=0 python inference.py \
     --erase_type 'instance' \
     --target_concept 'Snoopy' \
     --contents 'Snoopy' \
@@ -54,13 +54,13 @@ CUDA_VISIBLE_DEVICES=2 python sample.py \
     --edit_ckpt 'logs/checkpoints_measure/ICE_14/Snoopy.pt' \
     --num_samples 30 \
     --batch_size 6 \
-    --save_root 'results/1110'
+    --save_root 'results/XXX'
 ```
 
 ### 2. Multi-Concept Erasure
 To erase multiple target concepts (e.g., an instance and an artistic style simultaneously):
 ```bash
-CUDA_VISIBLE_DEVICES=5 python 323-train.py \
+CUDA_VISIBLE_DEVICES=0 python train.py \
     --target_concepts "Snoopy, Van Gogh" \
     --anchor_concepts ",art" \
     --retain_path "data/instance.csv" \
@@ -68,7 +68,7 @@ CUDA_VISIBLE_DEVICES=5 python 323-train.py \
 ```
 To sample from the multi-concept edited model:
 ```bash
-CUDA_VISIBLE_DEVICES=6 python sample.py \
+CUDA_VISIBLE_DEVICES=0 python inference.py \
     --erase_type 'instance' \
     --target_concept 'Snoopy' \
     --contents 'Snoopy' \
@@ -76,7 +76,7 @@ CUDA_VISIBLE_DEVICES=6 python sample.py \
     --edit_ckpt 'logs/checkpoints_measure/ICE_3/Snoopy_Van Gogh.pt' \
     --num_samples 30 \
     --batch_size 6 \
-    --save_root 'results/1028_14'
+    --save_root 'results/XXX'
 ```
 
 *Note: You can also utilize the included `inference_demo.py` to test generation capabilities natively.*
